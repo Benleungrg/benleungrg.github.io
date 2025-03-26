@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>【折腾记录】PicGo+Imgurl 图床 + Tinypng 压缩插件的配置</title>
+<meta name="keywords" content="【折腾记录】PicGo+Imgurl 图床 + Tinypng 压缩插件的配置, Ben&#39;s Blog">
+<meta name="description" content="一直想给博客搞个图片自动压缩加上传图床的方案，问了下 Deepseek 决定用最简单的 PicGo 加插件的方法，然而还是踩了不少坑…
+之前一直用的是 Imgurl.org 的图床，而 PicGo 只支持 Imgur 图床…
+而我也不想搬，">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="【折腾记录】PicGo+Imgurl 图床 + Tinypng 压缩插件的配置">
+<meta property="og:description" content="一直想给博客搞个图片自动压缩加上传图床的方案，问了下 Deepseek 决定用最简单的 PicGo 加插件的方法，然而还是踩了不少坑…
+之前一直用的是 Imgurl.org 的图床，而 PicGo 只支持 Imgur 图床…
+而我也不想搬，">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">【折腾记录】PicGo+Imgurl 图床 + Tinypng 压缩插件的配置</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2025-02-17</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/Coding/">
+              Coding
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p>一直想给博客搞个图片自动压缩加上传图床的方案，问了下 Deepseek 决定用最简单的 PicGo 加插件的方法，然而还是踩了不少坑…</p>
+<p>之前一直用的是 Imgurl.org 的图床，而 PicGo 只支持 Imgur 图床…</p>
+<p>而我也不想搬，就想办法通过插件添加自定义 web 图床。</p>
+<p>发现 PicGo 的插件页面，搜索插件没显示，开了代理也不行，发现很多人也 Issue 了这个问题。</p>
+<p>于是选择本地安装 Web-uploader 插件，成功安装。</p>
+<p>由于 Imgurl 相关文档不清晰，自己也纯小白不懂太深奥的东西，导致看不懂应该怎么配置，于是翻了别人配置其它图床的文章照猫画虎，成功用上了。</p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/02/17/15f0e5656cf4c6e5.png"></a><a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/02/17/15f0e5656cf4c6e5.png" data-fancybox="lightbox" data-caption=""><img src="/images/loading.svg" data-="" lazyload=""></a></p>
+<p>（JSON 路径的 <code>data.url</code>，一开始没填，导致成功上传到图床后，在 PicGo 相册中不显示）</p>
+<p>自定义 Body ：</p>
+<p><code>{"uid":"你的uid","token":"你的token"}</code></p>
+<p>API 信息可以在 Imgurl.org 后台查到。</p>
+<hr>
+<p>既然图床搞定了，就到压缩插件了</p>
+<p>一开始选择了这个 <a target="_blank" rel="noopener" href="https://github.com/juzisang/picgo-plugin-compress">picgo-plugin-compress</a> 插件，先是遇到无法本地安装，使用 npm 安装也失败，废了一番功夫装上后，接入 TinyPNG 的 API 后发现无法上传图片，查看 Issue 后发现已经无法使用，于是使用了另一个大佬的接力项目 <a target="_blank" rel="noopener" href="https://github.com/supine0703/picgo-plugin-compress-next">picgo-plugin-compress-next</a></p>
+<p>在安装时依然安装失败，于是参照这个<a target="_blank" rel="noopener" href="https://bearcai.com/index.php/archives/44/">大佬的方法</a>，通过安装 Yarn ，配置代理后成功安装。</p>
+<p>以下为文章引用：</p>
+<ol>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Nodejs</a></p>
+</li>
+<li><p> 安装 yarn</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">npm install <span class="token operator">--</span><span class="token keyword">global</span> yarn 
+<span class="token preprocessor property">#查看版本</span>
+yarn <span class="token operator">-</span>v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>进入 <code>node_modules</code> 文件夹（C:\Users\ 你的用户名 \AppData\Roaming\picgo\node_modules）<br>把 <code>node_modules</code> 文件夹清空。</p>
+</li>
+<li><p>科学上网，开启全局代理</p>
+</li>
+<li><p>设置 yarn 代理：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">yarn config set proxy http<span class="token operator">:</span><span class="token comment">//127.0.0.1:10809</span>
+yarn config set https<span class="token operator">-</span>proxy http<span class="token operator">:</span><span class="token comment">//127.0.0.1:10809</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<p>最后输入</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">yarn <span class="token keyword">add</span> picgo<span class="token operator">-</span>plugin<span class="token operator">-</span>compress<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（此处因为改用 <a target="_blank" rel="noopener" href="https://github.com/supine0703/picgo-plugin-compress-next">picgo-plugin-compress-next</a> 所以应改为：）</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">yarn <span class="token keyword">add</span> picgo<span class="token operator">-</span>plugin<span class="token operator">-</span>compress<span class="token operator">-</span>next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>成功后记得删除代理</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">yarn config <span class="token keyword">delete</span> proxy
+yarn config <span class="token keyword">delete</span> https<span class="token operator">-</span>proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后需要在 PicGo 的插件页面中找到 compress-next 的插件，点击齿轮图标，点击: <strong>启用 transformer - compress-next</strong> </p>
+<p>测试上传一张照片  </p>
+<p>在 Tinypng 网站查看 Account Page API 统计，如果次数增加了，说明压缩成功了。</p>
+
+        </div>
+          
+        <div class="top-div">
+          
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/d8067e26.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】使用 Deepseek 输出一个树莓派方案
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+

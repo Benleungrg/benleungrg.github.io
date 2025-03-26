@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>Blender Project UV Learning Log</title>
+<meta name="keywords" content="Blender Project UV Learning Log, Ben&#39;s Blog">
+<meta name="description" content="Basic Workflow:
+Add new material.
+Open&nbsp;Shader Editor&nbsp;in&nbsp;Editor Type&nbsp;at the top left.
+Drag the refere">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Blender Project UV Learning Log">
+<meta property="og:description" content="Basic Workflow:
+Add new material.
+Open&nbsp;Shader Editor&nbsp;in&nbsp;Editor Type&nbsp;at the top left.
+Drag the refere">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">Blender Project UV Learning Log</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-04-09</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="Basic-Workflow"><a href="#Basic-Workflow" class="headerlink" title="Basic Workflow:"></a>Basic Workflow:</h1><ol>
+<li>Add new material.</li>
+<li>Open&nbsp;<em>Shader Editor</em>&nbsp;in&nbsp;<em>Editor Type</em>&nbsp;at the top left.</li>
+<li>Drag the reference image into&nbsp;<em>Shader Editor</em>&nbsp;and link it to the Base Color of the geometry.</li>
+<li>Open two windows, one for modeling and another for UV Editor.</li>
+<li>In edit mode, select the face of the geometry, press the U key, and click “Project from View”.</li>
+</ol>
+<h2 id="Make-Reflection-For-Glass-etc"><a href="#Make-Reflection-For-Glass-etc" class="headerlink" title="Make Reflection For Glass etc:"></a>Make Reflection For Glass etc:</h2><ol>
+<li>add a new material slot.</li>
+<li>click and assign the new slot to the original material reference. (material ball drawer icon)</li>
+<li>In object mode, click the&nbsp;<em>fake user</em>&nbsp;button (the shield icon) to unlink it from the original one, which will create a copy.</li>
+<li>Increase the Specular and decrease the Metallic and Roughness to make the surface glossy.</li>
+<li>Select and assign the material to the glass part.</li>
+<li>Add surface imperfection.</li>
+</ol>
+<h2 id="Reference-Image-Blending"><a href="#Reference-Image-Blending" class="headerlink" title="Reference Image Blending"></a>Reference Image Blending</h2><ul>
+<li>If the resolution is too low, upscale it to 2k, paint over the edge to make it sharp, or use a blending brush to repaint a little.</li>
+<li>Gather more references for detail like logo or branding, photoshop them together.</li>
+</ul>
+<h2 id="Other-Notes"><a href="#Other-Notes" class="headerlink" title="Other Notes"></a>Other Notes</h2><ul>
+<li>If something didn’t function properly, try switching to&nbsp;<em>Edit Mode</em>/<em>Object Mode</em>.</li>
+</ul>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#Basic-Workflow"><span class="top-box-text">Basic Workflow:</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Make-Reflection-For-Glass-etc"><span class="top-box-text">Make Reflection For Glass etc:</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Reference-Image-Blending"><span class="top-box-text">Reference Image Blending</span></a></li><li class="top-box-item top-box-level-2"><a class="top-box-link" href="#Other-Notes"><span class="top-box-text">Other Notes</span></a></li></ol></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/e00b3de0.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】Blender 做两个习作小场景
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

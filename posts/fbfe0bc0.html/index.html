@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>【折腾记录】猫盘装群晖 NAS 以及 Emby 媒体库的过程</title>
+<meta name="keywords" content="【折腾记录】猫盘装群晖 NAS 以及 Emby 媒体库的过程, Ben&#39;s Blog">
+<meta name="description" content="此前对 NAS 没任何了解，仅个人备忘记录，非教程">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="【折腾记录】猫盘装群晖 NAS 以及 Emby 媒体库的过程">
+<meta property="og:description" content="此前对 NAS 没任何了解，仅个人备忘记录，非教程">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">【折腾记录】猫盘装群晖 NAS 以及 Emby 媒体库的过程</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-04-09</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/DIY/">
+              DIY
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p><strong>此前对 NAS 没任何了解，仅个人备忘记录，非教程</strong></p>
+<ul>
+<li>老板的闲置猫盘，在路由器上找到它的地址后进入登录页面，发现老板忘记了密码，登录页面也无重置密码方式。</li>
+<li>机器本体上也没有 Reset 按键，只能拔出其 2.5 寸硬盘将其格式化，但手头上没有这种硬盘线，无法接入电脑。</li>
+<li>刚好老板有一台旧笔记本，内部有这种硬盘的接口和线。</li>
+<li>拆开笔记本接入硬盘后，下载 Diskgenius 打开硬盘。由于不确定是否可以直接格式化，所以花了点时间试其它方案。</li>
+<li>尝试导出存储密码的文件，用 notepad 打开，然后覆盖新的密码上去，再将文件覆盖回硬盘。</li>
+<li>但密码是以某种方式加密的，无法找到是何种加密方式，无法解出原文件的密码。</li>
+<li>就算覆盖了新密码，也无法将密码文件覆盖回原硬盘，因为这种操作需要 Diskgenius 会员，太麻烦就放弃了。</li>
+<li>直接格式化硬盘，以 NTFS 分两个区，几 G 给系统，剩下作储存空间。</li>
+<li>到群晖官网下载了最新的 DS120j 的系统，配合 Synology Assistant 完成安装群晖系统</li>
+<li>店里的电视端本来装了 Kodi ，于是尝试通过 Kodi 通过局域网的方式直接播放 NAS 上的电影。</li>
+<li>在网页端 NAS 设置里，打开了 SMB NFS 等，于是在 Kodi 中通过 NFS 可以直接读到 NAS 的影音资源。</li>
+<li>但是 Kodi 不能直接做到电影海报墙，于是安装了 Kodi 的 Emby 皮肤，不会用，瞎搞了下，发现没办法退出该皮肤，于是直接卸载。</li>
+<li>下载了 Plex 媒体播放，但是进入就需要注册会员之类的，也放弃了。</li>
+<li>辗转之下选择了 Emby，网页端可以直接设置很多参数。</li>
+<li>但是 Emby 官网的 Apk 装入电视，卡在了联网这一部分，于是卸载。</li>
+<li>看教程随便下了个第三方的 Emby Apk ，安装登入后，输入 NAS 的 ip 然后登入账号</li>
+<li>发现没有读取到资源。</li>
+<li>在网页端新建一个 Emby 的电影文件夹，然后设置它元数据获取方式等。</li>
+<li>设置完发现还是没有扫描到 NAS 的资源，怀疑是设置的路径错误。</li>
+<li>它设置文件夹路径的界面里，虽然有列出一大堆路径，但是我翻找了下，也没有发现放着电影的那个文件。</li>
+<li>于是就找到电影文件夹直接复制路径，然后粘贴过去。</li>
+<li>仍然扫描不到资源，应该是地址格式错误，就不停地试不同格式的地址，但也还是读不到。</li>
+<li>尝试对存放影音资源的文件夹给 Emby 赋予读写权限。</li>
+<li>看了眼别人的部署流程，原来在它列出的一大堆路径里，是有 NAS 的路径的，只是我眼瞎没看到…</li>
+<li> 选取之后，就成功扫描到资源了。</li>
+<li>由于元数据，即是影片的简介，评分，封面图等数据，默认是外网地址，所以安装了个豆瓣的元数据插件，把它的优先顺序排到第一，然后选刷新覆盖原元数据，但还是没成功将英文元数据替换成中文的数据。</li>
+</ul>
+
+        </div>
+          
+        <div class="top-div">
+          
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/4a7f3b4.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】联想小新 15 笔记本屏幕爆框维修记录
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

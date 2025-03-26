@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>【折腾记录】Hexo 出现 Error: EPERM: operation not permitted, rmdir 解决过程</title>
+<meta name="keywords" content="【折腾记录】Hexo 出现 Error: EPERM: operation not permitted, rmdir 解决过程, Ben&#39;s Blog">
+<meta name="description" content="上传文章的时候，出现以下错误：
+$ hexo clean
+INFO  Validating config
+FATAL Something's wrong. Maybe you can find the solution here: http">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="【折腾记录】Hexo 出现 Error: EPERM: operation not permitted, rmdir 解决过程">
+<meta property="og:description" content="上传文章的时候，出现以下错误：
+$ hexo clean
+INFO  Validating config
+FATAL Something's wrong. Maybe you can find the solution here: http">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">【折腾记录】Hexo 出现 Error: EPERM: operation not permitted, rmdir 解决过程</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-04-17</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/Coding/">
+              Coding
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p>上传文章的时候，出现以下错误：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">$ hexo clean
+INFO  Validating config
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: EPERM: operation not permitted, rmdir 'D:\blog\public'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>尝试修改文件夹权限，没作用</p>
+</li>
+<li><p>用 administrator 权限打开 Git bash 来执行 <code>hexo clean</code>，也没用。</p>
+</li>
+<li><p>那就按照他要求删除掉整个 public 文件夹</p>
+</li>
+<li><p>再次 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
+</li>
+<li><p>成功 clean 并且上传</p>
+</li>
+</ul>
+
+        </div>
+          
+        <div class="top-div">
+          
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/c48f085.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】Hexo + Github pages 建站过程备忘录
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>【折腾记录】Hexo + Github pages 建站过程备忘录</title>
+<meta name="keywords" content="【折腾记录】Hexo + Github pages 建站过程备忘录, Ben&#39;s Blog">
+<meta name="description" content="
+依照 Hexo 官方文档安装 Node.js 和 Git；
+启动 Git bash，在电脑本地选定位置，按照以下执行代码安装 Hexo；
+
+$ npm install hexo-cli -g
+$ hexo init blog
+$ cd b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="【折腾记录】Hexo + Github pages 建站过程备忘录">
+<meta property="og:description" content="
+依照 Hexo 官方文档安装 Node.js 和 Git；
+启动 Git bash，在电脑本地选定位置，按照以下执行代码安装 Hexo；
+
+$ npm install hexo-cli -g
+$ hexo init blog
+$ cd b">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">【折腾记录】Hexo + Github pages 建站过程备忘录</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-04-09</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/Coding/">
+              Coding
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <ul>
+<li>依照 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a>安装 Node.js 和 Git；</li>
+<li>启动 Git bash，在电脑本地选定位置，按照以下执行代码安装 Hexo；</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">$ npm install hexo-cli -g
+$ hexo init blog
+$ cd blog
+$ npm install
+$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>在 Github 创建 public 的 new repository，名字一定一定要与自己的 ID 相同，其它不用写 ；</p>
+</li>
+<li><p>完成创建后页面会显示 repo 的 https 地址，复制以备后用；</p>
+</li>
+<li><p>在站点的根目录执行以下代码：</p>
+</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">npm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>找到本地创建好的 Hexo 的 blog 文件夹，找到<mark> _config.yml</mark> 文件打开；</li>
+<li>找到 url 填写自己创建好的 github 域名，如：</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> URL</span>
+<span class="token title important"><span class="token punctuation">##</span> Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'</span>
+url: https://Benleungrg.github.io/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>继续找到 deploy，添加以下配置：</li>
+</ul>
+<pre class="line-numbers language-mar" data-language="mar"><code class="language-mar"># Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: https://github.com/Benleungrg/Benleungrg.github.io.git
+  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>保存后输入：</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>Deploy 是将文件上传到 Github Page，过程会弹出提示要求登录 Github 账号；</p>
+</li>
+<li><p>目前本站安装的主题是这个：<a target="_blank" rel="noopener" href="https://github.com/f-dong/hexo-theme-minimalism">minimalism</a></p>
+<ul>
+<li> 切换主题需要在博客根目录的<mark>_config.yml</mark> 文件中作修改，具体参考主题的文档；</li>
+<li>并且需要按照主题要求执行去除代码高亮插件的操作；</li>
+</ul>
+</li>
+<li><p>日常使用操作：</p>
+</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 新建文章：</span>
+hexo new “文章名”
+<span class="token title important"><span class="token punctuation">#</span> 清理-生成静态文件-上传</span>
+hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+        </div>
+          
+        <div class="top-div">
+          
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/fbfe0bc0.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】猫盘装群晖 NAS 以及 Emby 媒体库的过程
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
