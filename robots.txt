@@ -20,4 +20,4 @@ Disallow: /fonts/
 
 Disallow: /fancybox/
 
-sitemap: https://benleungrg.github.io//sitemap.xml/
+sitemap: https://benleungrg.github.io//sitemap.xml
