@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>【折腾记录】较低成本打造一套 Meshtastic 太阳能节点要多少钱？</title>
+<meta name="keywords" content="【折腾记录】较低成本打造一套 Meshtastic 太阳能节点要多少钱？, Ben&#39;s Blog">
+<meta name="description" content="上篇文章试图用太阳能灯体改造太阳能节点失败后老实地采取了更具有可靠性的方案，虽然部分还是捡回来的破烂，但是突出一个能用而且有一个基本的耐操度，然后还会写一些各个配件环节踩过的坑。
+材料清单：
+Faketec V4 PCB 板，约 3 元 /">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="【折腾记录】较低成本打造一套 Meshtastic 太阳能节点要多少钱？">
+<meta property="og:description" content="上篇文章试图用太阳能灯体改造太阳能节点失败后老实地采取了更具有可靠性的方案，虽然部分还是捡回来的破烂，但是突出一个能用而且有一个基本的耐操度，然后还会写一些各个配件环节踩过的坑。
+材料清单：
+Faketec V4 PCB 板，约 3 元 /">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://benleungrg.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://benleungrg.github.io">
+        <h1 class="site-title">Ben&#39;s Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">【折腾记录】较低成本打造一套 Meshtastic 太阳能节点要多少钱？</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2025-11-14</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/logs/">
+              logs
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/DIY/">
+              DIY
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <p>上篇文章试图用太阳能灯体改造太阳能节点失败后老实地采取了更具有可靠性的方案，虽然部分还是捡回来的破烂，但是突出一个能用而且有一个基本的耐操度，然后还会写一些各个配件环节踩过的坑。</p>
+<p>材料清单：</p>
+<p><strong>Faketec V4 PCB 板，约 3 元 / 块：</strong> github 开源项目，可以自行去打板子，打了 10 块含运费共 30 元。</p>
+<p><strong>Lora 模块，约 15~22 元 / 块</strong>：** SX1268 芯片，主要是 RA-01S/HT-RA62, 频率国内 470~510Mhz，模块上的 Ipex 天线座比较娇贵，拔插天线的时候切记温柔正确地操作，否则容易把座子连同地下的铜都连根拔起…</p>
+<p><strong>开发板，约 10 元 / 块</strong>：** Nrf52840 Promicro，质量有点参差，拿到手要第一时间刷固件测试，在 PDD 最便宜的一家购入数块板，在刷入引导和固件前都要短接 RST 进入 DFU 模式否则电脑无法读盘。</p>
+<p><strong>天线，约 5 元 / 条：</strong> 天线选择 470~510 Mhz 的天线，有天线分析仪的最好买回来测一下天线中心频点有没有偏得特别离谱，我以及本地 ham 友都买到过中心频点偏到 390 Mhz 的天线（同样测试条件下另外几条天线频点都在业余段内或者标称范围内），否则天线工作驻波高意味着阻抗不匹配，意味着发射时大部分功率都被消耗了。</p>
+<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/390e806847a8d090.jpg" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/390e806847a8d090.jpg"><img title="" src="https://s3.uuu.ovh/imgs/2025/11/14/390e806847a8d090.jpg" alt="" data-align="center" width="290"></a>
+
+<p>（图为偏移的天线）</p>
+<p><strong>IPEX 转 SMA 线，约 2 元 / 条：</strong> 大概估量自己所需要长度，不需要太长也不要太短，因为这条线也相当于天线作用的一部分，太长会增加损耗或造成频率偏移。并且在配合防水盒使用时也需要注意 “牙长”，比如我买的是 11 牙的头，给防水盒钻孔后塞进去，因为盒子本体厚，再套上标配的两块垫片和螺母，留给天线拧的长度就不够了，只能放弃一块垫片才能完全拧好天线，所以可以酌情选择比 11 牙以上的。</p>
+<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/8aefc8c860767fd9.png" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/8aefc8c860767fd9.png"><img title="" src="https://s3.uuu.ovh/imgs/2025/11/14/8aefc8c860767fd9.png" alt="" data-align="center" width="232"></a>
+
+<p><strong>防水盒，约 5 元 / 个：</strong> 通常要配合太阳能板的尺寸来选择防水盒的尺寸，建议买带耳朵孔的，这样在各场合也多一个固定的手段，价格也相差不大。防水盒虽然防水，但是因为我选择平放，螺丝位置会积水，很容易生锈，觉得难受可以在最终放置时用贴纸把螺丝贴住。并且虽然没具体验证过，但有点担心内部进湿气又无法排出，担心的可以花两三块买个<strong>呼吸阀</strong> 给防水盒开孔安上去，当然我没弄就是了。</p>
+<p><strong>电池（18650/21700，3000mah），约 6~8 元 / 颗：</strong> 很多废旧电器都可以拆到，只要不是包浆或祖传的电池，理论上都可以用， Faketec 功耗低，只要容量达到 3000mah 左右，不靠太阳能充电用个接近一两周问题不大。我其中一个节点的电池是拆一个户外风扇电池拆出一套并联 21700，10000mah，一两个月都没问题。本地 ham 友也拆废旧电器得到两根容量相同的电池，我给他并了起来加焊上了保护板（1 元）。（操作电池有风险，请谨慎操作）</p>
+<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/9b0487bdbb16bc12.jpg" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/9b0487bdbb16bc12.jpg"><img title="" src="https://s3.uuu.ovh/imgs/2025/11/14/9b0487bdbb16bc12.jpg" alt="" data-align="center" width="219"></a>
+
+<p><strong>电阻、按钮、连接线配件类，约 10 元 / 全套：</strong></p>
+<p>1206 贴片电阻: 1M, 1k, 680k,</p>
+<p>MOS 管: SI2312，</p>
+<p>3X4X2 两脚贴片开关，</p>
+<p>PH2.0mm 公母线，因为 CN3065 等太阳能控制板预留的插座都是 2.0mm 的，但是貌似 2.0mm 很少有公母对插一套的可以买，通常只有公头，也可以买 1.2mm 的作为转接但是要焊线比较麻烦。</p>
+<p><strong>太阳能板，约 10 元 / 块：</strong> 虽然 5.5v 板子更便宜但是 6v 板子能在更弱的阳光充电，保险起见还是买了 6v 的，如果节点位置在自己阳台或者自家天台，不需要小巧隐蔽的话，可以尽情选择带支架的大尺寸板，有的相同参数的反而比小尺寸的更便宜。</p>
+<p>有 Ham 友买了便宜的板子发现两头有微微翘起压不平，不过只要打胶打够问题不大。</p>
+<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/002ea610ff7e17a9.jpg" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/11/14/002ea610ff7e17a9.jpg"><img title="" src="https://s3.uuu.ovh/imgs/2025/11/14/002ea610ff7e17a9.jpg" alt="" data-align="center" width="369"></a>
+
+<p><strong>防水密封胶，约 3 元 / 支：</strong> 我买的是 704 硅橡胶，常见的电子设备密封胶，用于把太阳能板粘在防水盒上以及各种连接处的防水处理，不过这种似乎不耐候，长时间放在紫外线条件下可能会老化，有条件可以尝试玻璃胶或用于窗缝密封等耐候耐晒的防水胶条。</p>
+<p><em>工具的就不列入其中了，比如电烙铁，防水盒开孔的钻头，接线热缩管等等。</em></p>
+<p><strong>总合计价格顶格算的话约 68 元一套，电阻等配件一套基本可以用在很多个节点上，再加平时薅羊毛等打折，约 50 块就可以凑齐一套。</strong></p>
+
+        </div>
+          
+        <div class="top-div">
+          
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/posts/6e6a7c52.html/">
+          <h3 class="post-title">
+            下一篇：【折腾记录】一次用 9.9 元太阳能路灯灯改造 Meshtastic 节点的失败尝试
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a aria-label="跳转至email" href="benleungrg@gmail.com" target="_blank">
+          <i class="icon icon-email"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+
