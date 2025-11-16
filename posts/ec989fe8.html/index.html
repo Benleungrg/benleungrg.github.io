@@ -142,7 +142,7 @@
 <p>运行 JTDX，远程软件，FLRIG，CPU 负载在 60~80% 左右。</p>
 <p><strong>但是后期测试中发现，来电开机功能不能每次都成功，成功几次之后就会开始出现无法进入系统的情况，进入 BIOS 看系统时间被重置，而之前打开的来电开机功能被重置成了来电不开机，判断为 BIOS 电池没电了，买电池换上解决（买纽扣电池记得留意是三线接口还是两线，虽然我没留意买到两线但是只需要按原来的正极（红线）接好也照样能用。）</strong></p>
 <h1 id="智能插座-x2F-通断器"><a href="#智能插座-x2F-通断器" class="headerlink" title="智能插座/通断器"></a>智能插座 / 通断器</h1><p>可以网购智能插座，但是因为我有闲置的用于灯具的米家通断器，以及小米的网关，所以直接改造一个智能插排，穷玩方案不建议模仿。要确定通断器的电压和最大承受电流是否能够承受。并且该通断器为蓝牙 mesh 设备，必须有一个蓝牙 mesh 网关才可以接入米家，一些小爱音箱自带蓝牙网关功能。</p>
-<p><a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png"><img src="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png"></a></p>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png"></a><a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png" data-fancybox="lightbox" data-caption=""><img src="https://s3.uuu.ovh/imgs/2025/07/23/eb334ba7c3a83d28.png"></a></p>
 <p><strong>接线如图，排插必须有地线，否则电台的电源没有地线会导致外壳带电。</strong></p>
 <p>如此可以实现：</p>
 <p>使用米家开启通断器→排插通电→电台来电开机→迷你主机来电开机并开机自启远程软件。</p>
@@ -218,10 +218,7 @@
       </div>
     </div>
     
-<script id="hexo-configurations">
-    window.theme_config = {"image":{"lazyload_enable":false,"lazyload_placeholder":null,"photo_zoom":"simple-lightbox"}};
-    window.is_post = true;
-  </script>
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
 
 <script src="/js/main.js"></script>
 
