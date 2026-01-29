@@ -105,11 +105,11 @@
           <p>搞了块  RA-01S-P 来试试，但是没有提前了解过，以为跟 RA-01S 一样焊上去就能用。</p>
 <p>使用 Faketec V4 板子，焊上去之后，在默认的 19dbm 功率下，接收、发射出去的信噪比都极差，就在我楼顶的节点正常来说可以达到 4DB 但实际去到 -14~-17DB，甚至与另一节点贴脸互发，DB 值才勉强到达正数。</p>
 <p>排除其它问题后开始对照 Lora 模块与 Faketec V4 的引脚发现并不一致，查阅资料结合 ChatGPT 理解判断大概是 Faketec V4 的引脚逻辑和这个模块的逻辑有冲突，导致模块的 PA （功率放大器）没有正确工作导致的。</p>
-<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png"><img title="" src="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png" alt="" data-align="center" width="411"></a>
+<a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png"></a><a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png" data-fancybox="lightbox" data-caption=""><img title="" src="https://s3.uuu.ovh/imgs/2025/12/23/0bf38171702d1491.png" alt="" data-align="center" width="411"></a>
 
 <p>其中官方文档提到，CPS 以及 RF_EN 的 pins 都是内置上拉电阻默认高电平开启的状态，而 Faketec V4 这板子对应的两个脚 TXEN, RXEN 是逻辑状态输出，与模块接通后导致模块的 FEM 和 PA 处于低电平 / 关闭状态，使得此时模块实际直出只有 0~3dbm, 然后 FEM 内的 LNA 也没工作，所以导致发射接收都极差。</p>
 <p>那解决方法就是将 Faketec V4 板子，<strong>对应模块上 CPS, RF_EN 的两个脚 TXEN 以及 RXEN 给封印起来，让它们不连通</strong>，这样 RA-01S-P 模块的 PA 和 FEM 就能回到它默认开启的状态。</p>
-<a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png" data-fancybox="lightbox" data-caption=""></a><a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png"><img src="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png" title="" alt="" data-align="center"></a>
+<a class="simple-lightbox" target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png"></a><a target="_blank" rel="noopener" href="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png" data-fancybox="lightbox" data-caption=""><img src="https://s3.uuu.ovh/imgs/2025/12/23/69d0d127629ba8e9.png" title="" alt="" data-align="center"></a>
 
 <p>然后看资料也得知，<strong>这款模块的 FEM 最大承受功率为 3dbm，超出会烧毁模块</strong>。我庆幸自己之前拿着 19dbm 乱试，还好因为 PA 没工作躲过一劫。那么为了以防它通电开机自动使用默认的 19dbm 导致烧毁，那就有必要在它开机工作前，<strong>给它刷一个最高上限 3dbm 的固件，在软件上限制它的功率了</strong>。</p>
 <p>绿油封印好，固件刷上就恢复正常了，发射效果要明显强于 RA-01S 这款最大 22dbm 的模块。它应该是输出 3dbm 到 PA ，PA 再放大到 29dbm 这样工作的。</p>
