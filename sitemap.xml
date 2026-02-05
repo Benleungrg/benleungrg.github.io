@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://benleungrg.github.io/posts/68d17f8a.html/</loc>
+    
+    <lastmod>2026-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://benleungrg.github.io/posts/53a9912e.html/</loc>
     
     <lastmod>2026-01-29</lastmod>
@@ -499,7 +508,7 @@
 
   <url>
     <loc>https://benleungrg.github.io/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -507,49 +516,49 @@
   
   <url>
     <loc>https://benleungrg.github.io/tags/logs/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://benleungrg.github.io/tags/Coding/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://benleungrg.github.io/tags/DIY/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://benleungrg.github.io/tags/Ham/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://benleungrg.github.io/tags/Havefun/</loc>
-    <lastmod>2026-01-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://benleungrg.github.io/tags/politics/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://benleungrg.github.io/tags/Thoughts/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://benleungrg.github.io/tags/politics/</loc>
+    <lastmod>2026-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
